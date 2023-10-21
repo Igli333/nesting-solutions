@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -44,14 +45,14 @@ public class ApplicationServiceImpl implements ApplicationService {
             application = applicationOptional.get();
             RoomType roomType = application.getRoomType();
 
-            List<Application> pending = null;
+            List<Application> pending;
 
             List<Application> pendingByCode = applicationRepository.findAllByCodeAndStatus(application.getCode(), ApplicationStatus.PENDING_APPROVED);
 
             if (!pendingByCode.isEmpty()) {
                 pending = pendingByCode;
             } else {
-                pending = applicationRepository.findAllByStatusAndRoomType(ApplicationStatus.PENDING_APPROVED, roomType);
+                pending = applicationRepository.findAllByStatusAndRoomTypeAndStudent_Gender(ApplicationStatus.PENDING_APPROVED, roomType, application.getStudent().getGender());
             }
 
             if (pending.size() + 1 == roomType.getCapacity()) {
@@ -59,7 +60,6 @@ public class ApplicationServiceImpl implements ApplicationService {
                 pending.forEach(a -> a.setStatus(ApplicationStatus.APPROVED));
 
                 contractService.generateContract(pending);
-
                 applicationRepository.deleteAllByStudentAndStatus(application.getStudent(), ApplicationStatus.ON_HOLD);
             } else {
                 application.setStatus(ApplicationStatus.PENDING_APPROVED);

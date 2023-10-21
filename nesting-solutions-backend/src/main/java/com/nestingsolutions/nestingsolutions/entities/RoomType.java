@@ -28,7 +28,8 @@ public class RoomType {
     @Column(name = "capacity")
     private Integer capacity;
 
-    // price ???
+    @Column(name = "price")
+    private Double price;
 
     @OneToMany(mappedBy = "roomType")
     private Set<Application> applications;

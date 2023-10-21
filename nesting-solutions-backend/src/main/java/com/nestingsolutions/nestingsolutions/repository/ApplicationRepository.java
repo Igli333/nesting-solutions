@@ -13,7 +13,7 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
 
     void deleteAllByStudentAndStatus(Student student, ApplicationStatus status);
 
-    List<Application> findAllByStatusAndRoomType(ApplicationStatus status, RoomType roomType);
+    List<Application> findAllByStatusAndRoomTypeAndStudent_Gender(ApplicationStatus status, RoomType roomType, Character gender);
 
     List<Application> findAllByCodeAndStatus(String code, ApplicationStatus status);
 }

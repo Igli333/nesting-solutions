@@ -10,4 +10,8 @@ public interface ContractService {
     void generateContract(List<Application> applications);
 
     ContractDto getContract(Long id);
+
+    List<ContractDto> findAll();
+
+    List<ContractDto> findContractsSignedLastMonth();
 }

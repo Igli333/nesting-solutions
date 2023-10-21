@@ -18,10 +18,12 @@ import java.util.List;
 public class RoomController {
 
     private final RoomService roomService;
+
     @GetMapping
     public ResponseEntity<List<RoomDto>> getAllRooms(){
         return ResponseEntity.ok(roomService.allRooms());
     }
+
     @GetMapping("/{roomId}")
     public ResponseEntity<RoomDto> getRoom(@PathVariable Long roomId){
         return ResponseEntity.ok(roomService.findRoom(roomId));

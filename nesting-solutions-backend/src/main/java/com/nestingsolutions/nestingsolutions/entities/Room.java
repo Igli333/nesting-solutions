@@ -27,12 +27,12 @@ public class Room {
     @Column(name = "status")
     private RoomStatus status;
 
+    @Column(name = "floor")
+    private Floor floor;
+
     @ManyToOne
     @JoinColumn(name = "roomType", nullable = false)
     private RoomType roomType;
-
-    @Column(name = "floor")
-    private Floor floor;
 
     @OneToOne(mappedBy = "room")
     private Contract contracts;

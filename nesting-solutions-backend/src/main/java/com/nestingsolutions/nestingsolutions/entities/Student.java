@@ -46,6 +46,9 @@ public class Student {
     @Column(name = "dateofbirth")
     private Date dateOfBirth;
 
+    @Column(name = "paid_this_month")
+    private Boolean paidThisMonth;
+
     @ManyToOne()
     @JoinColumn(name = "contract", referencedColumnName = "id")
     private Contract contract;

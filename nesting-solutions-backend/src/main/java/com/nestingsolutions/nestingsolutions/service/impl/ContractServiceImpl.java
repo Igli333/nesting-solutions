@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class ContractServiceImpl implements ContractService {
+
     private final ContractRepository contractRepository;
     private final RoomRepository roomRepository;
     private final StudentRepository studentRepository;
@@ -39,16 +40,14 @@ public class ContractServiceImpl implements ContractService {
         contract.setStudents(applications.stream().map(Application::getStudent).collect(Collectors.toSet()));
 
         Calendar calendar = Calendar.getInstance();
-
         calendar.add(Calendar.MONTH, 1);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
 
         Date firstDayOfNextMonth = calendar.getTime();
-
         contract.setDateOfStart(firstDayOfNextMonth);
         calendar.add(Calendar.YEAR, 1);
-        contract.setDateOfFinish(calendar.getTime());
 
+        contract.setDateOfFinish(calendar.getTime());
         contract.setPaymentType(PaymentType.BANK);
 
         contractRepository.save(contract);
@@ -66,5 +65,18 @@ public class ContractServiceImpl implements ContractService {
         }
 
         return mapper.map(contract, ContractDto.class);
+    }
+
+    @Override
+    public List<ContractDto> findAll() {
+        return mapper.map(contractRepository.findAll(), ContractDto.class);
+    }
+
+    @Override
+    public List<ContractDto> findContractsSignedLastMonth() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, -1);
+        Date result = cal.getTime();
+        return mapper.map(contractRepository.findAllByDateOfStartAfter(result), ContractDto.class);
     }
 }
