@@ -1,4 +1,4 @@
-package com.nestingsolutions.nestingsolutions.dto.roles;
+package com.nestingsolutions.nestingsolutions.enums.roles;
 
 import com.google.common.collect.Sets;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

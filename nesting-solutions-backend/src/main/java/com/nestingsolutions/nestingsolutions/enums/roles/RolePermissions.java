@@ -1,4 +1,4 @@
-package com.nestingsolutions.nestingsolutions.dto.roles;
+package com.nestingsolutions.nestingsolutions.enums.roles;
 
 public enum RolePermissions {
 

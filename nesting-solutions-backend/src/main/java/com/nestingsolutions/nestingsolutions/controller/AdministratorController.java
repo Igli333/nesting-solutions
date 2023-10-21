@@ -5,7 +5,7 @@ import com.nestingsolutions.nestingsolutions.dto.security.AdminRegistrationRespo
 import com.nestingsolutions.nestingsolutions.dto.security.AuthRequest;
 import com.nestingsolutions.nestingsolutions.dto.security.AuthResponse;
 import com.nestingsolutions.nestingsolutions.security.service.JwtService;
-import com.nestingsolutions.nestingsolutions.service.impl.AdminServiceImpl;
+import com.nestingsolutions.nestingsolutions.service.AdministratorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/admin")
 @RequiredArgsConstructor
-public class AdminController {
+public class AdministratorController {
     private final JwtService jwtService;
-    private final AdminServiceImpl adminService;
+    private final AdministratorService adminService;
     private final AuthenticationManager authenticationManager;
 
-    @PostMapping("/new")
+    @PostMapping("/")
     public ResponseEntity<AdminRegistrationResponse> addNewAdmin(@RequestBody AdminRegistrationRequest userInfo) {
-        return new ResponseEntity<>(new AdminRegistrationResponse(adminService.addUser(userInfo)), HttpStatus.CREATED);
+        return new ResponseEntity<>(new AdminRegistrationResponse(adminService.addAdmin(userInfo)), HttpStatus.CREATED);
     }
 
     @PostMapping("/authenticate")

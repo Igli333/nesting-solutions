@@ -1,6 +1,6 @@
 package com.nestingsolutions.nestingsolutions.security.config;
 
-import com.nestingsolutions.nestingsolutions.dto.roles.Role;
+import com.nestingsolutions.nestingsolutions.enums.roles.Role;
 import com.nestingsolutions.nestingsolutions.entities.Administrator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.Set;
 
 public class UserInfoUserDetails implements UserDetails {
-
 
     private String email;
     private String password;

@@ -4,17 +4,18 @@ import com.nestingsolutions.nestingsolutions.dto.security.AdminRegistrationReque
 import com.nestingsolutions.nestingsolutions.entities.Administrator;
 import com.nestingsolutions.nestingsolutions.repository.AdministratorRepository;
 import com.nestingsolutions.nestingsolutions.security.PasswordConfig;
+import com.nestingsolutions.nestingsolutions.service.AdministratorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AdminServiceImpl {
+public class AdministratorServiceImpl implements AdministratorService {
 
     private final PasswordConfig passwordConfig;
     private final AdministratorRepository administratorRepository;
 
-    public String addUser(AdminRegistrationRequest adminInfo) {
+    public String addAdmin(AdminRegistrationRequest adminInfo) {
         Administrator newAdmin = new Administrator();
         newAdmin.setFirstName(adminInfo.getFirstName());
         newAdmin.setSurname(adminInfo.getSurname());
