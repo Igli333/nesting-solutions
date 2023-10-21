@@ -8,6 +8,7 @@
 		<version>3.1.0</version>
 		<relativePath/>
 	</parent>
+	<packaging>jar</packaging>
 	<groupId>com.nestingsolutions</groupId>
 	<artifactId>nesting-solutions</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
