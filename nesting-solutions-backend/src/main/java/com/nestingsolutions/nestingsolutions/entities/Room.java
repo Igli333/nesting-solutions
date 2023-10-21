@@ -29,10 +29,14 @@ public class Room {
     @Column(name = "status")
     private RoomStatus status;
 
+    @ManyToOne
+    @JoinColumn(name = "room_type", nullable = false)
+    private RoomType roomType;
+
     @Column(name = "floor")
     private Floor floor;
 
-    @OneToMany(mappedBy = "room")
-    private Set<Contract> contracts;
+    @OneToOne(mappedBy = "room")
+    private Contract contracts;
 
 }

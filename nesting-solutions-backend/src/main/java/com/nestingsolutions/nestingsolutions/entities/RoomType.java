@@ -1,5 +1,6 @@
 package com.nestingsolutions.nestingsolutions.entities;
 
+import com.nestingsolutions.nestingsolutions.enums.RoomCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class RoomType {
     private Integer id;
 
     @Column(name = "category")
-    private String category;
+    private RoomCategory category;
 
     @Column(name = "capacity")
     private Integer capacity;
@@ -31,4 +32,7 @@ public class RoomType {
 
     @OneToMany(mappedBy = "room_type")
     private Set<Application> applications;
+
+    @OneToMany(mappedBy = "room_type")
+    private Set<Room> rooms;
 }

@@ -10,6 +10,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "contract")
@@ -38,11 +39,10 @@ public class Contract {
     @Column(name = "status")
     private Boolean status;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student", referencedColumnName = "id")
-    private Student student;
+    @OneToMany(mappedBy = "contract")
+    private Set<Student> students;
 
-    @ManyToOne
-    @JoinColumn(name = "room", nullable = false)
-    private RoomStatus room;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "room", referencedColumnName = "id")
+    private Room room;
 }

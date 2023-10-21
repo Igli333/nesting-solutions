@@ -16,7 +16,8 @@ import java.util.Set;
 @AllArgsConstructor
 public class Student extends Individual {
 
-    @OneToOne(mappedBy = "student")
+    @ManyToOne()
+    @JoinColumn(name = "contract", referencedColumnName = "id")
     private Contract contract;
 
     @OneToMany(mappedBy = "student")
