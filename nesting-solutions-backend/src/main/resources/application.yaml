@@ -1,9 +1,4 @@
 spring:
-  servlet:
-    multipart:
-      max-file-size: 100000MB
-      max-request-size: 100000MB
-
   jpa:
     generate-ddl: 'true'
     properties:
@@ -11,33 +6,14 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: 'true'
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: 'true'
   datasource:
-    username: postgres # for linux
-    #    username: postgres  #for mac
+    username: postgres
     url: jdbc:postgresql://localhost:5454/foleeHackJunction
     password: password
     hikari:
       auto-commit: false
-#  datasource:
-#    url: jdbc:sqlserver://hellothere.database.windows.net:1433;database=test-db-file;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-#    username: kristi_ROOT
-#    password: HelloMark7?!
-#  jpa:
-#    show-sql: true
-#    hibernate:
-#      dialect: org.hibernate.dialect.SQLServer2012Dialect
-#      ddl-auto: update
-application:
-  jwt:
-    secret-key: secretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecret
-    token-prefix: Bearer
-    token-expiration-after-days: 10
-
-default:
-  master:
-    password: SecurePassword123!
 
 server:
   port: 1234
