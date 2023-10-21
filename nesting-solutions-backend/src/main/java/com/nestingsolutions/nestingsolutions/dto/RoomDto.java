@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class RoomDto {
-    private Integer id;
+    private Long id;
     private String roomNumber;
     private RoomStatus status;
     private Floor floor;

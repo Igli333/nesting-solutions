@@ -26,7 +26,7 @@ public class ContractServiceImpl implements ContractService {
     public void generateContract(List<Application> applications) {
         Contract contract = new Contract();
 
-        Room emptyRoom = roomRepository.findFirstByStatusAndAndRoomType(RoomStatus.FREE, applications.get(0).getRoomType());
+        Room emptyRoom = roomRepository.findByStatusAndRoomType(RoomStatus.FREE, applications.get(0).getRoomType());
         contract.setRoom(emptyRoom);
 
         emptyRoom.setStatus(RoomStatus.OCCUPIED);

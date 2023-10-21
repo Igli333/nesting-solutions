@@ -1,8 +1,14 @@
 package com.nestingsolutions.nestingsolutions.entities;
 
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
 
 @Entity
 @Table(name = "admin")
@@ -10,7 +16,15 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Administrator extends Individual {
+public class Administrator {
     @Column(name = "password")
     private String password;
+    @Getter
+    @Id
+    private Long id;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }

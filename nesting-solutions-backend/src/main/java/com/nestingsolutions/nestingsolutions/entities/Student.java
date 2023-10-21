@@ -1,20 +1,32 @@
 package com.nestingsolutions.nestingsolutions.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "student")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class Student extends Individual {
+public class Student {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "firstname")
+    private String firstName;
+
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "address")
+    private String address;
 
     @ManyToOne()
     @JoinColumn(name = "contract", referencedColumnName = "id")

@@ -1,12 +1,12 @@
 package com.nestingsolutions.nestingsolutions.entities;
 
 import com.nestingsolutions.nestingsolutions.enums.RoomCategory;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -20,7 +20,7 @@ public class RoomType {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "category")
     private RoomCategory category;
@@ -30,9 +30,9 @@ public class RoomType {
 
     // price ???
 
-    @OneToMany(mappedBy = "room_type")
+    @OneToMany(mappedBy = "roomType")
     private Set<Application> applications;
 
-    @OneToMany(mappedBy = "room_type")
+    @OneToMany(mappedBy = "roomType")
     private Set<Room> rooms;
 }

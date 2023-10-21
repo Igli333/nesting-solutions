@@ -9,7 +9,7 @@ public interface ApplicationService {
 
     ApplicationDto update(ApplicationDto applicationRequest);
 
-    ApplicationDto approve(Integer id);
+    ApplicationDto approve(Long id);
 
-    void reject(Integer id);
+    void reject(Long id);
 }

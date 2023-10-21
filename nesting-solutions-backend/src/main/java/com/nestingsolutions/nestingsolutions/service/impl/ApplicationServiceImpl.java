@@ -36,7 +36,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public ApplicationDto approve(Integer id) {
+    public ApplicationDto approve(Long id) {
         Application application;
         Optional<Application> applicationOptional = applicationRepository.findById(id);
 
@@ -72,7 +72,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public void reject(Integer id) {
+    public void reject(Long id) {
         applicationRepository.deleteById(id);
     }
 

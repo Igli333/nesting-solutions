@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class ContractDto {
-    private Integer id;
+    private Long id;
     private Integer paymentType;
     private Date dateOfStart;
     private Date dateOfFinish;

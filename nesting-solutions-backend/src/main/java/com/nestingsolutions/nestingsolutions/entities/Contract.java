@@ -2,13 +2,12 @@ package com.nestingsolutions.nestingsolutions.entities;
 
 import com.nestingsolutions.nestingsolutions.enums.ContractType;
 import com.nestingsolutions.nestingsolutions.enums.PaymentType;
-import com.nestingsolutions.nestingsolutions.enums.RoomStatus;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
@@ -22,7 +21,7 @@ public class Contract {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "payment_type")
     private PaymentType paymentType;

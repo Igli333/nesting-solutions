@@ -20,12 +20,12 @@ public class ApplicationsController {
     }
 
     @PostMapping("/approve")
-    public ResponseEntity<ApplicationDto> approveApplication(@RequestParam("id") Integer id) {
+    public ResponseEntity<ApplicationDto> approveApplication(@RequestParam("id") Long id) {
         return ResponseEntity.ok(applicationService.approve(id));
     }
 
     @PostMapping("/reject")
-    public ResponseEntity<?> rejectApplication(@RequestParam("id") Integer id) {
+    public ResponseEntity<?> rejectApplication(@RequestParam("id") Long id) {
         applicationService.reject(id);
         return (ResponseEntity<?>) ResponseEntity.ok();
     }

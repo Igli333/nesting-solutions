@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ApplicationDto {
-    private Integer id;
+    private Long id;
     private Integer status;
     private String code;
     private Integer student;
