@@ -1,0 +1,23 @@
+services:
+  postgres:
+    container_name: hackjunction
+    image: postgres
+    environment:
+      POSTGRES_DB: foleeHackJunction
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5454:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
