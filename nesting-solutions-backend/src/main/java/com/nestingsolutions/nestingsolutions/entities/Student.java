@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.checkerframework.checker.units.qual.C;
 
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -41,6 +42,9 @@ public class Student {
 
     @Column(name = "personalId")
     private String personalId;
+
+    @Column(name = "dateofbirth")
+    private Date dateOfBirth;
 
     @ManyToOne()
     @JoinColumn(name = "contract", referencedColumnName = "id")
