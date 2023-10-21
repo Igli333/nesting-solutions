@@ -1,12 +1,20 @@
 package com.nestingsolutions.nestingsolutions.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.Set;
 
-
 @Entity
 @Table(name = "student")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
     @Id
     @Column(name = "id")
@@ -27,6 +35,12 @@ public class Student {
 
     @Column(name = "address")
     private String address;
+
+    @Column(name = "gender")
+    private Character gender;
+
+    @Column(name = "personalId")
+    private String personalId;
 
     @ManyToOne()
     @JoinColumn(name = "contract", referencedColumnName = "id")

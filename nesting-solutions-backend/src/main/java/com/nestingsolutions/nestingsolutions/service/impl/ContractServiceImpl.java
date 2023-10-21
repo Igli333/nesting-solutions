@@ -1,19 +1,21 @@
 package com.nestingsolutions.nestingsolutions.service.impl;
 
+import com.nestingsolutions.nestingsolutions.config.Mapper;
+import com.nestingsolutions.nestingsolutions.dto.ContractDto;
 import com.nestingsolutions.nestingsolutions.entities.Application;
 import com.nestingsolutions.nestingsolutions.entities.Contract;
 import com.nestingsolutions.nestingsolutions.entities.Room;
+import com.nestingsolutions.nestingsolutions.entities.Student;
 import com.nestingsolutions.nestingsolutions.enums.PaymentType;
 import com.nestingsolutions.nestingsolutions.enums.RoomStatus;
 import com.nestingsolutions.nestingsolutions.repository.ContractRepository;
 import com.nestingsolutions.nestingsolutions.repository.RoomRepository;
+import com.nestingsolutions.nestingsolutions.repository.StudentRepository;
 import com.nestingsolutions.nestingsolutions.service.ContractService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,6 +23,8 @@ import java.util.stream.Collectors;
 public class ContractServiceImpl implements ContractService {
     private final ContractRepository contractRepository;
     private final RoomRepository roomRepository;
+    private final StudentRepository studentRepository;
+    private final Mapper mapper;
 
     @Override
     public void generateContract(List<Application> applications) {
@@ -48,5 +52,19 @@ public class ContractServiceImpl implements ContractService {
         contract.setPaymentType(PaymentType.BANK);
 
         contractRepository.save(contract);
+    }
+
+    @Override
+    public ContractDto getContract(Long id) {
+        Contract contract = null;
+        Optional<Student> studentOptional = studentRepository.findById(id);
+
+        if (studentOptional.isPresent()) {
+            Student student = studentOptional.get();
+
+            contract = student.getContract();
+        }
+
+        return mapper.map(contract, ContractDto.class);
     }
 }
