@@ -1,11 +1,13 @@
 package com.nestingsolutions.nestingsolutions.controller;
 
+import com.nestingsolutions.nestingsolutions.dto.AdministratorDto;
 import com.nestingsolutions.nestingsolutions.dto.security.AdminRegistrationRequest;
 import com.nestingsolutions.nestingsolutions.dto.security.AdminRegistrationResponse;
 import com.nestingsolutions.nestingsolutions.dto.security.AuthRequest;
 import com.nestingsolutions.nestingsolutions.dto.security.AuthResponse;
 import com.nestingsolutions.nestingsolutions.security.service.JwtService;
 import com.nestingsolutions.nestingsolutions.service.AdministratorService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +15,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/admin")
@@ -39,5 +38,10 @@ public class AdministratorController {
         } else {
             throw new UsernameNotFoundException("invalid user request !");
         }
+    }
+
+    @GetMapping("me")
+    public ResponseEntity<AdministratorDto> adminProfile(HttpServletRequest request){
+        return ResponseEntity.ok(adminService.adminProfile(request));
     }
 }
