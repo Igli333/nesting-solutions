@@ -23,11 +23,19 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/maps",
-    title: "Maps",
-    rtlTitle: "خرائط",
-    icon: "icon-pin",
-    class: "" },
+    path: "/student-list",
+    title: "Student List",
+    rtlTitle: "الرموز",
+    icon: "icon-align-center",
+    class: ""
+  },
+  {
+    path: "/structure",
+    title: "Structure",
+    rtlTitle: "إخطارات",
+    icon: "icon-molecule-40",
+    class: ""
+  },
   {
     path: "/notifications",
     title: "Notifications",
@@ -57,13 +65,13 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-align-center",
     class: ""
   },
-  {
-    path: "/rtl",
-    title: "RTL Support",
-    rtlTitle: "ار تي ال",
-    icon: "icon-world",
-    class: ""
-  }
+  // {
+  //   path: "/rtl",
+  //   title: "RTL Support",
+  //   rtlTitle: "ار تي ال",
+  //   icon: "icon-world",
+  //   class: ""
+  // }
 ];
 
 @Component({

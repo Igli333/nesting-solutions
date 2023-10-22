@@ -3,6 +3,7 @@ import { ROUTES } from "../sidebar/sidebar.component";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {AuthServiceService} from '../../auth-service.service';
 
 @Component({
   selector: "app-navbar",
@@ -24,7 +25,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     location: Location,
     private element: ElementRef,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private authService: AuthServiceService
   ) {
     this.location = location;
     this.sidebarVisible = false;
@@ -179,6 +181,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+  logout(){
+    this.authService.logout();
   }
 
   private getDismissReason(reason: any): string {
