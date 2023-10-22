@@ -1,0 +1,49 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card card-plain">
+        <div class=" card-header">All Contracts</div>
+        <div class=" row">
+          <div class=" col-md-12">
+            <div class=" card mt-3">
+              <!--                <div class=" card-header">-->
+              <!--                  <h4 class=" card-title">Simple Table</h4>-->
+              <!--                </div>-->
+              <div class=" card-body">
+                <div class=" table-responsive">
+                  <table class=" table tablesorter" id="">
+                    <thead class=" text-primary">
+                    <tr>
+                      <th>Name</th>
+                      <th>University</th>
+                      <th>Contract</th>
+                      <th class=" text-center">Room Type</th>
+                      <th class=" text-center">Price</th>
+<!--                      <th class=" text-center">Modify</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let contract of contractList">
+                      <td>{{contract.name}}</td>
+                      <td>{{contract.studentName}}</td>
+                      <td>{{contract.contractEndDate}}</td>
+                      <td class=" text-center">{{contract.roomType}}</td>
+                      <td class=" text-center">{{contract.price}} €</td>
+<!--                      <td class=" text-center">-->
+<!--                        <button type="button" class=" btn " (click)="test(student)">-->
+<!--                          Modify-->
+<!--                        </button>-->
+<!--                      </td>-->
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
