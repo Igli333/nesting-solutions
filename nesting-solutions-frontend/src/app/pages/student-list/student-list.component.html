@@ -16,53 +16,23 @@
                       <thead class=" text-primary">
                       <tr>
                         <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th class=" text-center">Salary</th>
+                        <th>University</th>
+                        <th>Contract</th>
+                        <th class=" text-center">Room Type</th>
+                        <th class=" text-center">Modify</th>
                       </tr>
                       </thead>
                       <tbody>
-                      <tr>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td class=" text-center">$36,738</td>
-                      </tr>
-                      <tr>
-                        <td>Minerva Hooper</td>
-                        <td>CuraÃ§ao</td>
-                        <td>Sinaai-Waas</td>
-                        <td class=" text-center">$23,789</td>
-                      </tr>
-                      <tr>
-                        <td>Sage Rodriguez</td>
-                        <td>Netherlands</td>
-                        <td>Baileux</td>
-                        <td class=" text-center">$56,142</td>
-                      </tr>
-                      <tr>
-                        <td>Philip Chaney</td>
-                        <td>Korea, South</td>
-                        <td>Overland Park</td>
-                        <td class=" text-center">$38,735</td>
-                      </tr>
-                      <tr>
-                        <td>Doris Greene</td>
-                        <td>Malawi</td>
-                        <td>Feldkirchen in KÃ¤rnten</td>
-                        <td class=" text-center">$63,542</td>
-                      </tr>
-                      <tr>
-                        <td>Mason Porter</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                        <td class=" text-center">$78,615</td>
-                      </tr>
-                      <tr>
-                        <td>Jon Porter</td>
-                        <td>Portugal</td>
-                        <td>Gloucester</td>
-                        <td class=" text-center">$98,615</td>
+                      <tr *ngFor="let student of studentsList">
+                        <td>{{student.name}}</td>
+                        <td>{{student.university}}</td>
+                        <td>{{student.contractEndDate}}</td>
+                        <td class=" text-center">{{student.roomType}}</td>
+                        <td class=" text-center">
+                          <button type="button" class=" btn " (click)="test(student)">
+                            Modify
+                          </button>
+                        </td>
                       </tr>
                       </tbody>
                     </table>

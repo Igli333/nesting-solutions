@@ -23,19 +23,26 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
+    path: "/contracts",
+    title: "Contracts",
+    rtlTitle: "",
+    icon: "icon-attach-87",
+    class: ""
+  },
+  {
     path: "/structure",
     title: "Structure",
     rtlTitle: "",
     icon: "icon-molecule-40",
     class: ""
   },
-  {
-    path: "/user",
-    title: "User Profile",
-    rtlTitle: "",
-    icon: "icon-single-02",
-    class: ""
-  }
+  // {
+  //   path: "/user",
+  //   title: "User Profile",
+  //   rtlTitle: "",
+  //   icon: "icon-single-02",
+  //   class: ""
+  // }
   // {
   //   path: "/tables",
   //   title: "Table List",

@@ -14,6 +14,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { DormStructureComponent } from './pages/dorm-structure/dorm-structure.component';
+import { ContractsComponent } from './pages/contracts/contracts.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,7 @@ import { DormStructureComponent } from './pages/dorm-structure/dorm-structure.co
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, ContractsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
