@@ -17,7 +17,6 @@ public class NestingSolutionsBackendApplication {
 		SpringApplication.run(NestingSolutionsBackendApplication.class, args);
 	}
 
-
 	@Bean
 	ModelMapper modelMapper(){
 		return new ModelMapper();
