@@ -1,5 +1,10 @@
 HELP.md
-target/
+target/classes
+target/test-classes
+target/maven-archiver
+target/maven-status
+target/surefire-reports
+target/nesting-solutions-0.0.1-SNAPSHOT.jar.original
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
