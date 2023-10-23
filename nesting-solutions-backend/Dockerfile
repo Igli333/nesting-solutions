@@ -1,9 +1,9 @@
 # First stage: complete build environment
-FROM maven:3.5.0-jdk-8-alpine AS builder
+FROM maven:3.5.0 AS builder
 
 # add pom.xml and source code
-ADD ./pom.xml pom.xml
-ADD src src/
+ADD nesting-solutions-backend/pom.xml pom.xml
+ADD nesting-solutions-backend/src src/
 
 # package jar
 RUN mvn clean package

@@ -6,7 +6,19 @@ on:
       - feature/backend
 
 jobs:
-  build:
+  maven_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Maven project
+        run: mvn clean package
+        working-directory: nesting-solutions-backend
+
+  docker_build:
+    needs: maven_build
     runs-on: ubuntu-latest
 
     steps:
