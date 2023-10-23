@@ -1,5 +1,5 @@
 # First stage: complete build environment
-FROM maven:3.5.0 AS builder
+FROM maven:3.8.6 AS builder
 
 # add pom.xml and source code
 ADD nesting-solutions-backend/pom.xml pom.xml
