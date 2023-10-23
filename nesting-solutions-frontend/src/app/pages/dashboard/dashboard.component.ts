@@ -14,6 +14,13 @@ export class DashboardComponent implements OnInit {
   public clicked: boolean = true;
   public clicked1: boolean = false;
   public clicked2: boolean = false;
+  studentsList: any[] = [
+    {id:1, name:"Alger Pire", university:"UPT", contractEndDate:"31-12-2023", roomType: "Single Room"},
+    {id:2, name:"Armand Gjoka", university:"UT", contractEndDate:"31-05-2024", roomType: "Double Room"},
+    {id:3, name:"Elton Nore", university:"EPOKA", contractEndDate:"28-02-2024", roomType: "Single Room"},
+    {id:4, name:"Altina Sesi", university:"UM", contractEndDate:"01-03-2024", roomType: "1 Bedroom"},
+    {id:5, name:"Xhoana Nole", university:"UB", contractEndDate:"31-07-2024", roomType: "2 Bedroom"},
+  ]
 
   constructor() {}
 
@@ -317,9 +324,9 @@ export class DashboardComponent implements OnInit {
     gradientStroke.addColorStop(0, 'rgba(233,32,16,0)'); //red colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: ['Single', 'Double', 'Big Studio', '1 Bedroom', '2 Bedroom',],
       datasets: [{
-        label: "Data",
+        label: "Rooms",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#ec250d',
@@ -333,7 +340,7 @@ export class DashboardComponent implements OnInit {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: [65, 35, 70, 40, 10],
       }]
     };
 
@@ -355,9 +362,9 @@ export class DashboardComponent implements OnInit {
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: ['1st Week', '2st Week', '3rd Week', '4th Week'],
       datasets: [{
-        label: "My First dataset",
+        label: "Euro (€)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#00d6b4',
@@ -371,7 +378,7 @@ export class DashboardComponent implements OnInit {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
+        data: [4500, 3500, 2500, 1500],
       }]
     };
 
@@ -408,7 +415,7 @@ export class DashboardComponent implements OnInit {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "My First dataset",
+          label: "Contract Numbers",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#ec250d',
@@ -446,9 +453,9 @@ export class DashboardComponent implements OnInit {
         display: false
       },
       data: {
-        labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+        labels: ['UPT', 'UT', 'EPOKA', 'UM', 'UD', 'NW'],
         datasets: [{
-          label: "Countries",
+          label: "Students Nr.",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -456,7 +463,7 @@ export class DashboardComponent implements OnInit {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+          data: [30, 65, 56, 42, 15, 12],
         }]
       },
       options: gradientBarChartConfiguration

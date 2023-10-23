@@ -11,4 +11,4 @@ Smooth Operators
 
 ### Database Diagram
 
-![Database](./database.jpeg "Database")
+![Database](Database-schema.png "Database")

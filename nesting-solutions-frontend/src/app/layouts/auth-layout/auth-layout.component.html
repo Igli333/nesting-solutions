@@ -3,7 +3,7 @@
     <div class="logo">
       <a href="https://www.creative-tim.com?ref=bda-auth-layout-sidebar-logo" class="simple-text logo-mini">
         <div class="logo-img">
-          <img src="./assets/img/angular2-logo-white.png" />
+          <img src="./assets/img/angular2-logo-white.png"/>
         </div>
       </a>
       <a href="https://www.creative-tim.com?ref=bda-auth-layout-sidebar-logo" class="simple-text logo-normal">
@@ -111,7 +111,7 @@
                 ngbDropdownToggle
               >
                 <div class=" photo">
-                  <img alt="Profile Photo" src="assets/img/anime3.png" />
+                  <img alt="Profile Photo" src="assets/img/anime3.png"/>
                 </div>
                 <b class=" caret d-none d-lg-block d-xl-block"> </b>
                 <p class=" d-lg-none">الخروج</p>
@@ -166,104 +166,27 @@
         </div>
       </div>
     </footer>
-
-  </div>
-</div>
-<div class=" fixed-plugin">
-  <div class=" show-dropdown" ngbDropdown>
-    <a data-toggle="dropdown" ngbDropdownToggle>
-      <i class=" fa fa-cog fa-2x"> </i>
-    </a>
-    <ul ngbDropdownMenu>
-      <li class=" header-title">خلفية الشريط الجانبي</li>
-      <li class=" adjustments-line">
-        <a class=" switch-trigger background-color" href="javascript:void(0)">
-          <div class=" badge-colors text-center">
-            <span
-              class=" badge filter badge-danger"
-              [ngClass]="{'active':sidebarColor==='red'}" (click)="changeSidebarColor('red')"
-            >
-            </span>
-            <span
-              class=" badge filter badge-primary"
-              data-color="primary"
-              [ngClass]="{'active':sidebarColor==='primary'}" (click)="changeSidebarColor('primary')"
-            >
-            </span>
-            <span class=" badge filter badge-info" [ngClass]="{'active':sidebarColor==='blue'}" (click)="changeSidebarColor('blue')"> </span>
-            <span class=" badge filter badge-success" [ngClass]="{'active':sidebarColor==='green'}" (click)="changeSidebarColor('green')">
-            </span>
-          </div>
-          <div class=" clearfix"></div>
-        </a>
-      </li>
-      <li class=" adjustments-line text-center color-change">
-        <span class=" color-label"> وضع الضوء </span>
-        <span class=" badge light-badge mr-2" (click)="changeDashboardColor('white-content')"> </span>
-        <span class=" badge dark-badge ml-2" (click)="changeDashboardColor('black-content')"> </span>
-        <span class=" color-label"> وضع الظلام</span>
-      </li>
-      <li class=" button-container">
-        <a
-          class=" btn btn-primary btn-block btn-round"
-          href="https://www.creative-tim.com/product/black-dashboard-angular?ref=bda-auth-layout-fixed-plugin"
-          target="_blank"
-        >
-          التحميل الان
-        </a>
-        <a
-          class=" btn btn-default btn-block btn-round"
-          href="https://demos.creative-tim.com/black-dashboard-angular/#/documentation/tutorial?ref=bda-auth-layout-fixed-plugin"
-          target="_blank"
-        >
-          كابل بيانات
-        </a>
-      </li>
-      <li class=" header-title">شكرا لك على 95 سهم!</li>
-      <li class=" button-container text-center">
-        <button class=" btn btn-round btn-info" id="twitter">
-          <i class=" fab fa-twitter"> </i> · 45
-        </button>
-        <button class=" btn btn-round btn-info" id="facebook">
-          <i class=" fab fa-facebook-f"> </i> · 50
-        </button>
-        <br />
-
-        <br />
-
-        <a
-          aria-label="Star ntkme/github-buttons on GitHub"
-          class=" github-button"
-          data-icon="octicon-star"
-          data-show-count="true"
-          data-size="large"
-          href="https://github.com/creativetimofficial/black-dashboard-angular?ref=bda-auth-layout-fixed-plugin"
-        >
-          نجمة
-        </a>
-      </li>
-    </ul>
   </div>
 </div>
 
-    <ng-template #content let-modal>
-      <div class=" modal-header">
-        <input
-          class=" form-control"
-          id="inlineFormInputGroup"
-          placeholder="بحث"
-          type="text"
-        />
+<ng-template #content let-modal>
+  <div class=" modal-header">
+    <input
+      class=" form-control"
+      id="inlineFormInputGroup"
+      placeholder="بحث"
+      type="text"
+    />
 
-        <button
-          aria-label="Close"
-          class=" close"
-          data-dismiss="modal"
-          type="button"
-          (click)="modal.dismiss('Cross click')"
-        >
-          <i class=" tim-icons icon-simple-remove"> </i>
-        </button>
-      </div>
+    <button
+      aria-label="Close"
+      class=" close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <i class=" tim-icons icon-simple-remove"> </i>
+    </button>
+  </div>
 
-    </ng-template>
+</ng-template>
